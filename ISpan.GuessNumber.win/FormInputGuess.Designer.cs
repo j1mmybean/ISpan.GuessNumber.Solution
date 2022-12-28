@@ -80,8 +80,11 @@
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEnter);
+            this.KeyPreview = true;
             this.Name = "FormInputGuess";
             this.Text = "FormInputGuess";
+            this.Activated += new System.EventHandler(this.FormInputGuess_Activated);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormInputGuess_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

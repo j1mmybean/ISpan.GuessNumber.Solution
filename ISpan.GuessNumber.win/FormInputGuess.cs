@@ -21,26 +21,42 @@ namespace ISpan.GuessNumber.win
         {
             this.Close();
         }
+        int lowerBound = 1;
+        int upperBound = 100;
+
         private void btnEnter_Click(object sender, EventArgs e)
         {
             FormGuessNumber formGuessNumber = (FormGuessNumber)this.Owner;
-            int Guess = int.Parse(txtInput.Text);
             int Answer = FormGuessNumber.RandomNumber;
-            if (Guess == Answer)
+            bool IsNumber = int.TryParse(txtInput.Text, out int Guess);
+
+            if (!IsNumber || Guess < lowerBound || Guess > upperBound)
+                MessageBox.Show($"請輸入{lowerBound}~{upperBound}間的數字。");
+            else if (Guess == Answer)
                 MessageBox.Show("Congratulation!!!You got " + Answer + "!!!");
             else if (Guess > Answer)
             {
-                formGuessNumber.TooBig();
+                upperBound = Guess;
+                formGuessNumber.TooBig(Guess, lowerBound);
             }
             else if (Guess < Answer)
             {
-                formGuessNumber.TooSmall();
+                lowerBound = Guess;
+                formGuessNumber.TooSmall(Guess, upperBound);
             }
-            else
-            {
-                string message = "請輸入";
-                MessageBox.Show(message);
-            }
+            txtInput.Focus();
+            txtInput.SelectAll();
+        }
+
+        private void FormInputGuess_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) 
+                btnEnter.PerformClick();
+        }
+
+        private void FormInputGuess_Activated(object sender, EventArgs e)
+        {
+            txtInput.Focus();
         }
     }
 }

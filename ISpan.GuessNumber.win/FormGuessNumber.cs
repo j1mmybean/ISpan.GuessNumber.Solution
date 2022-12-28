@@ -16,14 +16,15 @@ namespace ISpan.GuessNumber.win
         {
             InitializeComponent();
         }
-        
-        public void TooBig()
+        public void TooBig(int input, int lowerBound)
         {
-            labShowMessage.Text = "Too Big";
+            labShowMessage.Text = $"Too Big!!!\n" +
+                $"Between {lowerBound} and {input}";
         }
-        public void TooSmall()
+        public void TooSmall(int input, int upperBound)
         {
-            labShowMessage.Text = "Too Small";
+            labShowMessage.Text = "Too Small\n" +
+                $"Between {input} and {upperBound}";
         }
         public static int RandomNumber;
         private void btnGuess_Click(object sender, EventArgs e)

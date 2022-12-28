@@ -47,7 +47,7 @@
             // btnShowAnswer
             // 
             this.btnShowAnswer.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnShowAnswer.Location = new System.Drawing.Point(436, 266);
+            this.btnShowAnswer.Location = new System.Drawing.Point(498, 266);
             this.btnShowAnswer.Name = "btnShowAnswer";
             this.btnShowAnswer.Size = new System.Drawing.Size(169, 107);
             this.btnShowAnswer.TabIndex = 1;
@@ -61,20 +61,20 @@
             this.labShowMessage.Font = new System.Drawing.Font("新細明體", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labShowMessage.Location = new System.Drawing.Point(24, 129);
             this.labShowMessage.Name = "labShowMessage";
-            this.labShowMessage.Size = new System.Drawing.Size(735, 44);
+            this.labShowMessage.Size = new System.Drawing.Size(746, 43);
             this.labShowMessage.TabIndex = 2;
-            this.labShowMessage.Text = "Please Select A Number Between 1 to 100.";
+            this.labShowMessage.Text = "Please Select A Number Between 1 and 100.";
             // 
             // FormGuessNumber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(903, 472);
             this.Controls.Add(this.labShowMessage);
             this.Controls.Add(this.btnShowAnswer);
             this.Controls.Add(this.btnGuess);
             this.Name = "FormGuessNumber";
-            this.Text = "Form1";
+            this.Text = "GuessNumber";
             this.ResumeLayout(false);
             this.PerformLayout();
 
